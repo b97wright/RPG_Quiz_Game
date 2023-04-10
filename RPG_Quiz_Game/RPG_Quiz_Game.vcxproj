@@ -127,7 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="QuizGame.cpp" />
     <ClCompile Include="RPG_Quiz_Game.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="QuizGame.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
