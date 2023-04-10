@@ -22,16 +22,20 @@ public:
 	void addSubject();
 	void removeSubject();
 	void printSubject();
+	void editSubject();
 
 	// Edit Subject Menu
+	void addQuestion();
 
 private:
 	bool mainIsPlaying;
 	bool isInGame;
 	bool isEdit;
+	bool isEditSubject;
 	int menuChoice;
 	int editChoice;
 	int editRemoveIndex;
+	int editSubjectIndex;
 	string subjectName;
 	vector<Subject> subjects;
 };

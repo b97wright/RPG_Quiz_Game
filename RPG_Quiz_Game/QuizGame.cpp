@@ -5,9 +5,11 @@ QuizGame::QuizGame()
 	mainIsPlaying = true;
 	isInGame = true;
 	isEdit = true;
+	isEditSubject = true;
 	menuChoice = -1;
 	editChoice = -1;
 	editRemoveIndex = -1;
+	editSubjectIndex = -1;
 }
 
 QuizGame::~QuizGame()
@@ -97,7 +99,8 @@ void QuizGame::editGame()
 		cout << "1) - Add a Subject -" << endl;
 		cout << "2) - Remove a Subject -" << endl;
 		cout << "3) - Print Subject -" << endl;
-		cout << "4) - Return to Main Menu -" << endl;
+		cout << "4) - Edit a Subject" << endl;
+		cout << "5) - Return to Main Menu -" << endl;
 		cin >> editChoice;
 		cout << endl;
 
@@ -119,6 +122,11 @@ void QuizGame::editGame()
 			break;
 		}
 		case 4:
+		{
+			editSubject();
+			break;
+		}
+		case 5:
 		{
 			cout << "Returning Back to Main Menu" << endl;
 			isEdit = false;
@@ -171,6 +179,8 @@ void QuizGame::removeSubject()
 		{
 			cout << "The number you selected was not apart of the index. \nPlease enter a number between 0 through " << subjects.size() - 1 << endl;
 			cout << "Which subject would you like to be removed, please select the index: ";
+			cin >> editRemoveIndex;
+			// add something i think
 		}
 
 		subjects.erase(subjects.begin() + editRemoveIndex);
@@ -190,6 +200,27 @@ void QuizGame::printSubject()
 		cout << i << ") " << subjects[i].getSubjectName() << endl;
 	}
 	cout << endl;
+}
+
+// ---------- Edit Subject Menu ----------
+void QuizGame::editSubject()
+{
+	printSubject();
+	cout << "Which subject would you like to be edit, please select the index: ";
+	cin >> editSubjectIndex;
+
+	int currentMax = subjects.size();
+	while (!(editSubjectIndex >= 0 && editSubjectIndex <= currentMax))
+	{
+		cout << "The number you selected was not apart of the index. \nPlease enter a number between 0 through " << subjects.size() - 1 << endl;
+		cout << "Which subject would you like to edit, please select the index: ";
+		cin >> editSubjectIndex;
+	}
+}
+
+void QuizGame::addQuestion()
+{
+
 }
 
 
