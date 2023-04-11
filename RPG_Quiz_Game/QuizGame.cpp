@@ -104,39 +104,47 @@ void QuizGame::editGame()
 		cin >> editChoice;
 		cout << endl;
 
-		switch (editChoice)
+		if (subjects.empty() == true && editChoice != 5 && editChoice != 1)
 		{
-		case 1:
+			cout << "Please add a subject(s) before wanting to remove, edit or print a subject(s)!\n" << endl;
+		}
+		else
 		{
-			addSubject();
-			break;
+			switch (editChoice)
+			{
+			case 1:
+			{
+				addSubject();
+				break;
+			}
+			case 2:
+			{
+				removeSubject();
+				break;
+			}
+			case 3:
+			{
+				printSubject();
+				break;
+			}
+			case 4:
+			{
+				editSubject();
+				break;
+			}
+			case 5:
+			{
+				cout << "Returning Back to Main Menu" << endl;
+				isEdit = false;
+				break;
+			}
+			default:
+			{
+				break;
+			}
+			}
 		}
-		case 2:
-		{
-			removeSubject();
-			break;
-		}
-		case 3:
-		{
-			printSubject();
-			break;
-		}
-		case 4:
-		{
-			editSubject();
-			break;
-		}
-		case 5:
-		{
-			cout << "Returning Back to Main Menu" << endl;
-			isEdit = false;
-			break;
-		}
-		default:
-		{
-			break;
-		}
-		}
+
 
 
 	}
@@ -171,19 +179,26 @@ void QuizGame::removeSubject()
 	else
 	{
 		printSubject();
-		cout << "Which subject would you like to be removed, please select the index: ";
+		cout << "Which subject would you like to be removed, please select the index, or -1 to go back: ";
 		cin >> editRemoveIndex;
 
-		int currentMax = subjects.size();
-		while (!(editRemoveIndex >= 0 && editRemoveIndex <= currentMax))
+		if (editRemoveIndex == -1)
 		{
-			cout << "The number you selected was not apart of the index. \nPlease enter a number between 0 through " << subjects.size() - 1 << endl;
-			cout << "Which subject would you like to be removed, please select the index: ";
-			cin >> editRemoveIndex;
-			// add something i think
+		
 		}
+		else
+		{
+			int currentMax = subjects.size();
+			while (!(editRemoveIndex >= 0 && editRemoveIndex <= currentMax))
+			{
+				cout << "The number you selected was not apart of the index. \nPlease enter a number between 0 through " << subjects.size() - 1 << endl;
+				cout << "Which subject would you like to be removed, please select the index: ";
+				cin >> editRemoveIndex;
+			
+			}
 
-		subjects.erase(subjects.begin() + editRemoveIndex);
+			subjects.erase(subjects.begin() + editRemoveIndex);
+		}
 	}
 	cout << endl;
 }
@@ -216,11 +231,15 @@ void QuizGame::editSubject()
 		cout << "Which subject would you like to edit, please select the index: ";
 		cin >> editSubjectIndex;
 	}
+
+	addQuestion(editSubjectIndex);
 }
 
-void QuizGame::addQuestion()
+void QuizGame::addQuestion(int index)
 {
-
+	cout << "----------" << subjects[index].getSubjectName() << "----------" << endl;
+	int temp;
+	cin >> temp;
 }
 
 

@@ -25,7 +25,7 @@ public:
 	void editSubject();
 
 	// Edit Subject Menu
-	void addQuestion();
+	void addQuestion(int index);
 
 private:
 	bool mainIsPlaying;
