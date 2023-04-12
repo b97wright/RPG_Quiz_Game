@@ -1,7 +1,9 @@
 #pragma once
+#include <iostream>
 #include <vector>
 #include <String>
 
+using namespace std;
 using std::vector;
 using std::string;
 
@@ -13,6 +15,11 @@ public:
 	~Subject();
 
 	string getSubjectName();
+	int getQuestionSize();
+
+	void sAddQuestion();
+	void sRemoveQuestion();
+	void sPrintQuestions();
 
 private: 
 	string Name;

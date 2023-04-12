@@ -217,7 +217,6 @@ void QuizGame::printSubject()
 	cout << endl;
 }
 
-// ---------- Edit Subject Menu ----------
 void QuizGame::editSubject()
 {
 	printSubject();
@@ -235,11 +234,33 @@ void QuizGame::editSubject()
 	addQuestion(editSubjectIndex);
 }
 
+// ---------- Edit Subject Menu ----------
 void QuizGame::addQuestion(int index)
 {
+
 	cout << "----------" << subjects[index].getSubjectName() << "----------" << endl;
-	int temp;
-	cin >> temp;
+
+	
+
+}
+
+void QuizGame::removeQuestion(int index)
+{
+
+}
+
+void QuizGame::printQuestion(int index)
+{
+	cout << "----------" << subjects[index].getSubjectName() << "----------" << endl;
+	cout << "Select a number in the edit subject menu to continue. " << endl;
+	cout << "1) - Add Questions -" << endl;
+	cout << "2) - Remove a Question -" << endl;
+	cout << "3) - Print Questions -" << endl;
+	cout << "4) - Edit a Question" << endl;
+	cout << "5) - Return to Main Menu -" << endl;
+
+	
+
 }
 
 
