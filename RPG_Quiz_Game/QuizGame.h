@@ -25,9 +25,11 @@ public:
 	void editSubject();
 
 	// Edit Subject Menu
+	void editSubjectMenu(int index);
 	void addQuestion(int index);
 	void removeQuestion(int index);
 	void printQuestion(int index);
+	void editQuestion(int index);
 
 private:
 	bool mainIsPlaying;
@@ -36,6 +38,7 @@ private:
 	bool isEditSubject;
 	int menuChoice;
 	int editChoice;
+	int editSubjectChoice;
 	int editRemoveIndex;
 	int editSubjectIndex;
 	string subjectName;

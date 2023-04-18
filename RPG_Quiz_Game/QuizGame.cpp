@@ -8,6 +8,7 @@ QuizGame::QuizGame()
 	isEditSubject = true;
 	menuChoice = -1;
 	editChoice = -1;
+	editSubjectChoice = -1;
 	editRemoveIndex = -1;
 	editSubjectIndex = -1;
 }
@@ -161,7 +162,7 @@ void QuizGame::howToPlay()
 // ---------- Edit Menu ----------
 void QuizGame::addSubject()
 {
-	cout << "---------- Add Question ----------" << endl;
+	cout << "---------- Add Subject ----------" << endl;
 	cout << "What subject woudl you like to be added: " << endl;
 	cin >> subjectName;
 
@@ -230,36 +231,93 @@ void QuizGame::editSubject()
 		cout << "Which subject would you like to edit, please select the index: ";
 		cin >> editSubjectIndex;
 	}
-
-	addQuestion(editSubjectIndex);
+	cout << endl;
+	editSubjectMenu(editSubjectIndex);
+	
 }
 
 // ---------- Edit Subject Menu ----------
+void QuizGame::editSubjectMenu(int index)
+{
+	while (isEditSubject)
+	{
+		cout << "----------" << subjects[index].getSubjectName() << "----------" << endl;
+		cout << "Select a number in the edit subject menu to continue. " << endl;
+		cout << "1) - Add Questions -" << endl;
+		cout << "2) - Remove a Question -" << endl;
+		cout << "3) - Print Questions -" << endl;
+		cout << "4) - Edit a Question" << endl;
+		cout << "5) - Return to Edit Menu -" << endl;
+		cin >> editSubjectChoice;
+
+		if (subjects[index].isSubjectQuestionEmpty() == true && editSubjectChoice != 5 && editSubjectChoice != 1)
+		{
+			cout << "Please add a question(s) in the subject: " << subjects[index].getSubjectName() <<  " before wanting to remove, edit or print a subject(s)!\n" << endl;
+		}
+		else
+		{
+			switch (editSubjectChoice)
+			{
+			case 1:
+			{
+				addQuestion(index);
+				break;
+			}
+			case 2:
+			{
+				removeQuestion(index);
+				break;
+			}
+			case 3:
+			{
+				printQuestion(index);
+				break;
+			}
+			case 4:
+			{
+				printQuestion(index);
+				break;
+			}
+			case 5:
+			{
+				cout << "Returning Back to Edit Menu" << endl;
+				isEditSubject = false;
+				break;
+			}
+			default:
+				break;
+			}
+			isEditSubject = true;
+			cout << endl;
+
+		}
+
+	}
+
+}
+
 void QuizGame::addQuestion(int index)
 {
-
 	cout << "----------" << subjects[index].getSubjectName() << "----------" << endl;
-
-	
-
+	subjects[index].sAddQuestion();
 }
 
 void QuizGame::removeQuestion(int index)
 {
-
+	cout << "----------" << subjects[index].getSubjectName() << "----------" << endl;
 }
 
 void QuizGame::printQuestion(int index)
 {
 	cout << "----------" << subjects[index].getSubjectName() << "----------" << endl;
-	cout << "Select a number in the edit subject menu to continue. " << endl;
-	cout << "1) - Add Questions -" << endl;
-	cout << "2) - Remove a Question -" << endl;
-	cout << "3) - Print Questions -" << endl;
-	cout << "4) - Edit a Question" << endl;
-	cout << "5) - Return to Main Menu -" << endl;
+
 
 	
+
+}
+
+void QuizGame::editQuestion(int index)
+{
 
 }
 

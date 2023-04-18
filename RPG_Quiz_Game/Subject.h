@@ -20,6 +20,9 @@ public:
 	void sAddQuestion();
 	void sRemoveQuestion();
 	void sPrintQuestions();
+	void sEditQuestions();
+
+	bool isSubjectQuestionEmpty();
 
 private: 
 	string Name;

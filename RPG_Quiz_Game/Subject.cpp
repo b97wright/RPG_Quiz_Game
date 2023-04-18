@@ -27,24 +27,26 @@ int Subject::getQuestionSize()
 
 void Subject::sAddQuestion()
 {
+	int questionCount = 1;
 	string inputQuestions;
 
 	cout << "Add questions for current subject. Or input -1 to quit." << endl;
 
-	while (inputQuestions == "-1")
-	{
-		int questionCount = 1;
-
+	while (inputQuestions != "-1")
+	{ // TODO fix this, it is taking an empty string for some reason
+		cin.clear();
 		cout << questionCount << ") ";
-		cin >> inputQuestions;
+		getline(cin, inputQuestions);
 		Q_Guess.push_back(inputQuestions);
 		cout << endl;
+		questionCount++;
 	}
+	cout << endl;
 }
 
 void Subject::sRemoveQuestion()
 {
-
+	sPrintQuestions();
 }
 
 void Subject::sPrintQuestions()
@@ -54,4 +56,15 @@ void Subject::sPrintQuestions()
 	{
 		cout << i << ") " << Q_Guess[i] << endl;
 	}
+	cout << endl;
+}
+
+void Subject::sEditQuestions()
+{
+
+}
+
+bool Subject::isSubjectQuestionEmpty()
+{
+	return Q_Guess.empty();
 }
