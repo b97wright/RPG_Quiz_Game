@@ -28,5 +28,6 @@ private:
 	string Name;
 	vector<string> Q_Guess;
 	vector<string> A_Guess;
+	int questionRemoveIndex;
 };
 

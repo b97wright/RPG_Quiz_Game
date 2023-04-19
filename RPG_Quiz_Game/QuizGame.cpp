@@ -287,13 +287,12 @@ void QuizGame::editSubjectMenu(int index)
 			default:
 				break;
 			}
-			isEditSubject = true;
-			cout << endl;
 
 		}
 
 	}
-
+	isEditSubject = true;
+	cout << endl;
 }
 
 void QuizGame::addQuestion(int index)
@@ -305,11 +304,13 @@ void QuizGame::addQuestion(int index)
 void QuizGame::removeQuestion(int index)
 {
 	cout << "----------" << subjects[index].getSubjectName() << "----------" << endl;
+	subjects[index].sRemoveQuestion();
 }
 
 void QuizGame::printQuestion(int index)
 {
 	cout << "----------" << subjects[index].getSubjectName() << "----------" << endl;
+	subjects[index].sPrintQuestions();
 
 
 	
