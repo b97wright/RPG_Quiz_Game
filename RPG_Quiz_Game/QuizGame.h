@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include "Subject.h"
+#include "SaveandLoad.h"
 
 using namespace std;
 
@@ -43,5 +44,6 @@ private:
 	int editSubjectIndex;
 	string subjectName;
 	vector<Subject> subjects;
+	SaveandLoad saveandload;
 };
 

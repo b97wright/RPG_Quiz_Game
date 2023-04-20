@@ -24,6 +24,8 @@ public:
 
 	bool isSubjectQuestionEmpty();
 
+	string returnQuestion(int index);
+
 private: 
 	string Name;
 	vector<string> Q_Guess;

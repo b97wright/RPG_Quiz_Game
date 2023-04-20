@@ -41,7 +41,6 @@ void Subject::sAddQuestion()
 		{
 			Q_Guess.push_back(inputQuestions);
 		}
-		cout << endl;
 		questionCount++;
 	}
 	cout << endl;
@@ -84,7 +83,7 @@ void Subject::sRemoveQuestion()
 
 void Subject::sPrintQuestions()
 {
-	cout << "---------- List of Subjects ----------" << endl;
+	cout << "---------- List of Questions ----------" << endl;
 	for (int i = 0; i < Q_Guess.size(); i++)
 	{
 		cout << i << ") " << Q_Guess[i] << endl;
@@ -100,4 +99,9 @@ void Subject::sEditQuestions()
 bool Subject::isSubjectQuestionEmpty()
 {
 	return Q_Guess.empty();
+}
+
+string Subject::returnQuestion(int index)
+{
+	return Q_Guess[index];
 }

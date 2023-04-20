@@ -1,4 +1,2 @@
-﻿  QuizGame.cpp
-F:\Documents\Visual Studio Community Code\RPG_Quiz_Game\RPG_Quiz_Game\QuizGame.cpp(192,36): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-F:\Documents\Visual Studio Community Code\RPG_Quiz_Game\RPG_Quiz_Game\QuizGame.cpp(227,34): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+﻿  SaveandLoad.cpp
   RPG_Quiz_Game.vcxproj -> F:\Documents\Visual Studio Community Code\RPG_Quiz_Game\x64\Debug\RPG_Quiz_Game.exe

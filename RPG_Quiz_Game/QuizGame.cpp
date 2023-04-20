@@ -30,6 +30,7 @@ void QuizGame::mainMenu()
 		cout << "4) - Edit Game -" << endl;
 		cout << "5) - How To Play -" << endl;
 		cout << "6) - Quit -" << endl;
+		cout << "Main Menu Choice: ";
 		cin >> menuChoice;
 		cout << endl;
 
@@ -46,6 +47,7 @@ void QuizGame::mainMenu()
 		}
 		case 3:
 		{
+			saveGame();
 			break;
 		}
 		case 4:
@@ -89,6 +91,7 @@ void QuizGame::loadGame()
 void QuizGame::saveGame()
 {
 	cout << "Please wait while we save the game to your local save location!" << endl;
+	saveandload.saveGame(subjects);
 }
 
 void QuizGame::editGame()
@@ -102,6 +105,7 @@ void QuizGame::editGame()
 		cout << "3) - Print Subject -" << endl;
 		cout << "4) - Edit a Subject" << endl;
 		cout << "5) - Return to Main Menu -" << endl;
+		cout << "Edit Game Choice: ";
 		cin >> editChoice;
 		cout << endl;
 
@@ -248,11 +252,13 @@ void QuizGame::editSubjectMenu(int index)
 		cout << "3) - Print Questions -" << endl;
 		cout << "4) - Edit a Question" << endl;
 		cout << "5) - Return to Edit Menu -" << endl;
+		cout << "Subject Menu Choice: ";
 		cin >> editSubjectChoice;
+		cout << endl;
 
 		if (subjects[index].isSubjectQuestionEmpty() == true && editSubjectChoice != 5 && editSubjectChoice != 1)
 		{
-			cout << "Please add a question(s) in the subject: " << subjects[index].getSubjectName() <<  " before wanting to remove, edit or print a subject(s)!\n" << endl;
+			cout << "Please add a question(s) in the subject: " << subjects[index].getSubjectName() <<  " before wanting to remove, edit or print a question(s)!\n" << endl;
 		}
 		else
 		{
@@ -311,10 +317,6 @@ void QuizGame::printQuestion(int index)
 {
 	cout << "----------" << subjects[index].getSubjectName() << "----------" << endl;
 	subjects[index].sPrintQuestions();
-
-
-	
-
 }
 
 void QuizGame::editQuestion(int index)

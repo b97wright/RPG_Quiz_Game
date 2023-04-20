@@ -129,10 +129,12 @@
   <ItemGroup>
     <ClCompile Include="QuizGame.cpp" />
     <ClCompile Include="RPG_Quiz_Game.cpp" />
+    <ClCompile Include="SaveandLoad.cpp" />
     <ClCompile Include="Subject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="QuizGame.h" />
+    <ClInclude Include="SaveandLoad.h" />
     <ClInclude Include="Subject.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
